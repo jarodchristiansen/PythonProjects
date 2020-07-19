@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<body>
+{% extends "base.html" %}
+{% block content %}
+
+ <form method="POST">
+	{{form.hidden_tag()}}
+	{{form.email.label}}{{form.email()}}
+     {{form.password.label}}{{form.password()}}
+	{{form.submit()}}
+  </form>
+{% endblock %}
+</body>
+</html>

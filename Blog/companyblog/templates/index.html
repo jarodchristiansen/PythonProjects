@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block content %}
+  <div class="jumbotron">
+    <h1>Company Blog</h1>
+    <p>Welcome to Our Company's Blog Page</p>
+  </div>
+
+  <div class="grid-container" style="margin-lefT: 10%;">
+
+    {# Go through each blog post #}
+    {% for post in blog_posts.items %}
+
+    <div class="card" style="height: 400px;">
+
+      <div class="card-body" style="margin-left: 18%;">
+        <h2><a class="card-title" href="  {{ url_for('blog_posts.blog_post', blog_post_id=post.id) }}">{{ post.title }}</a></h2>
+        <a href="{{ url_for('users.user_posts', username=post.author.username) }}">Written By: {{ post.author.username }}</a>
+        <p>Published on: {{ post.date.strftime('%Y-%m-%d') }}</p>
+          <img class="card-img-top" src="{{url_for('static', filename='three.jpg')}}" alt="" style="height: 150px; width: 200px;"/>
+          <br/>
+          <br/>
+        <a href="{{ url_for('blog_posts.blog_post', blog_post_id=post.id) }}" class="btn btn-primary">Read Blog Post</a>
+      </div>
+    </div>
+    <br/>
+   {% endfor %}
+
+   <nav aria-label="Page navigation example">
+     <ul class="pagination justify-content-center" style=" margin-left: 118%; margin-top: 30px;">
+       {% for page_num in blog_posts.iter_pages(left_edge=1, right_edge=1, left_current=1, right_current=2) %}
+          {% if blog_posts.page == page_num %}
+          <li class="page-item disabled">
+            <a class="page-link" href="{{ url_for('core.index', page=page_num) }}">{{ page_num }}</a></li>
+          </li>
+          {% else %}
+            <li class="page-item"><a class="page-link" href="{{ url_for('core.index', page=page_num) }}">{{ page_num }}</a></li>
+      </ul>
+          {% endif %}
+      {% endfor %}
+    </nav>
+  </div>
+{% endblock %}

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="5554c4d9-5247-4a94-b3ee-40f319b7167d" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1eHTRhyVmgnAu9kBQz4VT0hUktm" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Vanessa\Documents\Flask_Bootcamp\Blog\companyblog\static" />
+    </key>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5554c4d9-5247-4a94-b3ee-40f319b7167d" name="Default Changelist" comment="" />
+      <created>1593977511686</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1593977511686</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="222" y="103" key="SettingsEditor" timestamp="1593977612477">
+      <screen x="0" y="0" width="1440" height="920" />
+    </state>
+    <state x="222" y="103" key="SettingsEditor/0.0.1440.920@0.0.1440.920" timestamp="1593977612477" />
+    <state x="417" y="284" key="com.intellij.ide.util.TipDialog" timestamp="1595157277249">
+      <screen x="0" y="0" width="1440" height="920" />
+    </state>
+    <state x="417" y="284" key="com.intellij.ide.util.TipDialog/0.0.1440.920@0.0.1440.920" timestamp="1595157277249" />
+    <state x="351" y="6" width="739" height="909" key="find.popup" timestamp="1595168775310">
+      <screen x="0" y="0" width="1440" height="920" />
+    </state>
+    <state x="351" y="6" width="739" height="909" key="find.popup/0.0.1440.920@0.0.1440.920" timestamp="1595168775310" />
+    <state x="463" y="104" key="refactoring.ChangeSignatureDialog" timestamp="1595167853242">
+      <screen x="0" y="0" width="1440" height="920" />
+    </state>
+    <state x="463" y="104" key="refactoring.ChangeSignatureDialog/0.0.1440.920@0.0.1440.920" timestamp="1595167853242" />
+    <state x="383" y="195" width="672" height="678" key="search.everywhere.popup" timestamp="1593979484671">
+      <screen x="0" y="0" width="1440" height="920" />
+    </state>
+    <state x="383" y="195" width="672" height="678" key="search.everywhere.popup/0.0.1440.920@0.0.1440.920" timestamp="1593979484671" />
+  </component>
+</project>

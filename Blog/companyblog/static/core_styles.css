@@ -1,0 +1,39 @@
+body{
+background-image: url("profile_pics/Flare_Background.jpg");
+opacity: .8;
+}
+
+.nav {
+background-color: black;
+color: white;
+}
+
+.nav-text{
+color:white;
+margin-left: 15px;
+}
+
+.page-footer{
+background-color: black;
+color:white;
+width: 100%;
+}
+
+.blog-container{
+    background-color:#fff;
+    margin-bottom: 50px;
+}
+
+.jumbotron {
+background: none
+}
+
+.card {
+  background-color: #fff;
+  box-shadow: -2px 10px 15px grey;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+}
