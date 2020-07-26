@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="5554c4d9-5247-4a94-b3ee-40f319b7167d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/companyblog/static/profile_pics/gradient_1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/companyblog/static/profile_pics/gradient_2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/companyblog/static/profile_pics/monochrome.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/companyblog/static/profile_pics/neon.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Scripts/python-3.8.3-amd64.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/companyblog/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/companyblog/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/companyblog/blogposts/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/companyblog/blogposts/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/companyblog/blogposts/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/companyblog/blogposts/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/companyblog/core/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/companyblog/core/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/companyblog/data.sqlite" beforeDir="false" afterPath="$PROJECT_DIR$/companyblog/data.sqlite" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/companyblog/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/companyblog/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/companyblog/static/core_styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/companyblog/static/core_styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/companyblog/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/companyblog/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/companyblog/templates/blog_post.html" beforeDir="false" afterPath="$PROJECT_DIR$/companyblog/templates/blog_post.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/companyblog/templates/create_post.html" beforeDir="false" afterPath="$PROJECT_DIR$/companyblog/templates/create_post.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/companyblog/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/companyblog/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/companyblog/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/companyblog/templates/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/companyblog/users/picture_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/companyblog/users/picture_handler.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/companyblog/users/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/companyblog/users/views.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1eHTRhyVmgnAu9kBQz4VT0hUktm" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../venv/Scripts" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Vanessa\Documents\Flask_Bootcamp\Blog\companyblog\blogposts" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Vanessa\Documents\Flask_Bootcamp\Blog\companyblog\static" />
+    </key>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5554c4d9-5247-4a94-b3ee-40f319b7167d" name="Default Changelist" comment="" />
+      <created>1593977511686</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1593977511686</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="563" y="287" key="FileChooserDialogImpl" timestamp="1595420411701">
+      <screen x="0" y="0" width="1440" height="920" />
+    </state>
+    <state x="563" y="287" key="FileChooserDialogImpl/0.0.1440.920@0.0.1440.920" timestamp="1595420411701" />
+    <state x="222" y="103" key="SettingsEditor" timestamp="1595420422488">
+      <screen x="0" y="0" width="1440" height="920" />
+    </state>
+    <state x="222" y="103" key="SettingsEditor/0.0.1440.920@0.0.1440.920" timestamp="1595420422488" />
+    <state x="417" y="284" key="com.intellij.ide.util.TipDialog" timestamp="1595470154095">
+      <screen x="0" y="0" width="1440" height="920" />
+    </state>
+    <state x="417" y="284" key="com.intellij.ide.util.TipDialog/0.0.1440.920@0.0.1440.920" timestamp="1595470154095" />
+    <state x="351" y="6" width="739" height="909" key="find.popup" timestamp="1595168775310">
+      <screen x="0" y="0" width="1440" height="920" />
+    </state>
+    <state x="351" y="6" width="739" height="909" key="find.popup/0.0.1440.920@0.0.1440.920" timestamp="1595168775310" />
+    <state x="463" y="104" key="refactoring.ChangeSignatureDialog" timestamp="1595167853242">
+      <screen x="0" y="0" width="1440" height="920" />
+    </state>
+    <state x="463" y="104" key="refactoring.ChangeSignatureDialog/0.0.1440.920@0.0.1440.920" timestamp="1595167853242" />
+    <state x="383" y="195" width="672" height="678" key="search.everywhere.popup" timestamp="1593979484671">
+      <screen x="0" y="0" width="1440" height="920" />
+    </state>
+    <state x="383" y="195" width="672" height="678" key="search.everywhere.popup/0.0.1440.920@0.0.1440.920" timestamp="1593979484671" />
+  </component>
+</project>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Post</title>
+	<script src="https://cdn.tiny.cloud/1/yg20cw9olo5ruuai4n0k61382pm3p3j43bsrcsyvpv3bplmt/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+
+	 <script>
+      tinymce.init({
+        selector: '#post',
+        plugins: [
+            'advlist autolink link image imagetools lists charmap print preview hr anchor pagebreak spellchecker',
+            'searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking',
+            'save table contextmenu directionality template paste textcolor codesample'
+        ],
+        imagetools_toolbar: "rotateleft rotateright | flipv fliph | editimage imageoptions",
+        toolbar: 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | print preview media fullpage | forecolor backcolor emoticons | codesample',
+        images_upload_url: '{{ url_for('blog_posts.imageuploader') }}',
+        images_reuse_filename: false,
+        automatic_uploads: true,
+        images_reuse_filename: false,
+        images_upload_base_path: '/static/uploads',
+        codesample_languages: [
+            { text: 'HTML/XML', value: 'markup' },
+            { text: 'JavaScript', value: 'javascript' },
+            { text: 'CSS', value: 'css' },
+            { text: 'Processing', value: 'processing' },
+            { text: 'Python', value: 'python' }
+        ],
+        width: "100%",
+      });
+    </script>
+</head>
+<body>
+{% extends 'base.html' %}
+{% block content %}
+   <div class="container">
+	<form class="form-group" method="POST">
+	 {{form.hidden_tag()}}
+
+	<div class="form-group">
+	  {{form.heading.label(class="form-control-label")}}
+	  {{form.heading(class="form-control form-control-lg")}}
+        </div>
+
+	<div class="form-group">
+	  {{form.post.label(class="form-control-label")}}
+	  {{form.post(class="form-control form-control-lg")}}
+        </div>
+
+	<div class="form-group">
+	  {{form.meta_title.label(class="form-control-label")}}
+	  {{form.meta_title(class="form-control form-control-lg")}}
+        </div>
+
+	<div class="form-group">
+	  {{form.meta_desc.label(class="form-control-label")}}
+	  {{form.meta_desc(class="form-control form-control-lg")}}
+        </div>
+
+	<div class="form-group">
+	  {{form.category.label(class="form-control-label")}}
+	  {{form.category(class="form-control form-control-lg")}}
+        </div>
+
+	<div class="form-group">
+	  {{form.keywords.label(class="form-control-label")}}
+	  {{form.keywords(class="form-control form-control-lg")}}
+        </div>
+	<div class="form-group">
+	  {{form.submit(class="btn btn-outline-info")}}
+	</div>
+      </form>
+     </div>
+{% endblock %}
+</body>
+
+</html>
