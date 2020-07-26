@@ -120,7 +120,7 @@ def textgen():
             data={
                 'text': seed_text
             },
-            headers={'api-key': '9875f94a-9ac3-4000-a0f9-a3700a33d758'}
+            headers={'api-key': ''}
         )
         flash('Text Submitted')
 
