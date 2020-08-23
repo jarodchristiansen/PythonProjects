@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+</head>
+<body>
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container" style="background-color:rgba(255, 255, 255, 0.63); margin: 50px 0 50px 0">
+<h2>Register to use the default text generator for free</h2>
+<form method="POST">
+{{form.hidden_tag()}}<br>
+{{form.email.label}}{{form.email(class_="form-control")}}<br>
+{{form.username.label}}{{form.username(class_="form-control")}}<br>
+{{form.password.label}}{{form.password(class_="form-control")}}<br>
+{{form.pass_confirm.label}}{{form.pass_confirm(class_="form-control")}}<br>
+{{form.submit(class_="btn-primary")}}
+</form>
+</div>
+{% endblock %}
+</body>
+</html>
