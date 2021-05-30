@@ -12,7 +12,7 @@ as well as time series forecasting based on real world data. Integration of vari
 
 ## Neural Networks
 Courswork from multiple machine learning, deep learning, and AI development with John Harper, Mark Winterbottom, and Jose Portilla.
-Django development centered integration for machine learning and neural netowrks for time series forecasting, Natural Lange Processing, and Computer Vision.
+Django development centered integration for machine learning and neural netowrks for time series forecasting, Natural Language Processing, and Computer Vision.
 
 ### Computer Vision Projects
  - Image classification projects created to identify pedestrians vs. roads in basic road safety automation. 
