@@ -1,7 +1,7 @@
-var theContent = $('#content2');
+const theContent = $('#content2');
 
 $('#save').on('click', function(){
-  var editedContent   = theContent.html();
+  const editedContent = theContent.html();
   localStorage.newContent = editedContent;
 });
 
