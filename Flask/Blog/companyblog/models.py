@@ -6,6 +6,8 @@ from datetime import datetime
 from hashlib import md5
 from flask_migrate import Migrate
 
+USERS_FK = "users.id"
+
 
 #class Admin(db.Model):
  #   _tablename_ = "admins"
@@ -49,7 +51,8 @@ class Images(db.Model):
     file_height = db.Column(db.Integer, nullable=False)
     create_date = db.Column(db.DateTime,default=datetime.utcnow, nullable=False)
 
-    def getImage(image_id):
+    @staticmethod
+    def get_image(image_id):
         return Images.query.filter_by(id=image_id).first()
 
 
@@ -103,7 +106,7 @@ class BlogPost(db.Model):
     meta_desc = db.Column(db.String(160), nullable=False)
     category = db.Column(db.String(160), nullable=False)
     keywords = db.Column(db.String(160), nullable=False)
-    user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
+    user_id = db.Column(db.Integer, db.ForeignKey(USERS_FK), nullable=False)
     date = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
     title = db.Column(db.String(140),nullable=False)
     text = db.Column(db.Text,nullable=False)
@@ -122,7 +125,7 @@ class BlogPost(db.Model):
 
 class TextOutput(db.Model):
     users = db.relationship(User)
-    user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
+    user_id = db.Column(db.Integer, db.ForeignKey(USERS_FK), nullable=False)
     id = db.Column(db.Integer, primary_key=True)
     text = db.Column(db.String(1000))
     sa_score = db.Column(db.Integer)

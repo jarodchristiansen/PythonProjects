@@ -11,7 +11,13 @@ app = Flask(__name__)
 
 
 ############## Setting Up Database #####################
-app.config['SECRET_KEY'] = 'mysecret'
+_secret_key = os.environ.get("SECRET_KEY")
+if not _secret_key:
+    raise RuntimeError(
+        "SECRET_KEY environment variable must be set. "
+        "See .env.example in Flask/Blog (copy to .env or export SECRET_KEY)."
+    )
+app.config["SECRET_KEY"] = _secret_key
 app.permanent_session_lifetime = datetime.timedelta(days=365)
 basedir = os.path.abspath(os.path.dirname(__file__))
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///'+os.path.join(basedir,'data.sqlite')
