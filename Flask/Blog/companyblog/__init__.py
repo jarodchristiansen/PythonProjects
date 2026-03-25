@@ -3,7 +3,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 import os
 from flask_login import LoginManager
-from companyblog.role_required import admin_required, not_ROLE
+from companyblog.role_required import admin_required, redirect_for_insufficient_role
 import datetime
 
 app = Flask(__name__)
@@ -32,10 +32,10 @@ Migrate(app,db)
 
 #login configs
 
-LoginManager.not_ROLE = not_ROLE
+LoginManager.redirect_for_insufficient_role = redirect_for_insufficient_role
 login_manager = LoginManager()
 login_manager.init_app(app)
-login_manager.not_ROLE_view = 'core.index'
+login_manager.insufficient_role_view = 'core.index'
 login_manager.login_view = 'users.login'
 
 

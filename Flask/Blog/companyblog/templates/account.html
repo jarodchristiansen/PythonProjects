@@ -1,10 +1,11 @@
 {% extends "base.html" %}
+{% block title %}Account · {{ current_user.username }}{% endblock %}
 {% block content %}
 
 <div class="jumbotron">
-  <div align='center'>
+  <div class="text-center">
     <h1 >Welcome to the page for {{current_user.username}}</h1>
-    <img align='center' src="{{ url_for('static', filename='profile_pics/' + current_user.profile_image) }}">
+    <img class="d-block mx-auto" src="{{ url_for('static', filename='profile_pics/' + current_user.profile_image) }}" alt="Profile picture for {{ current_user.username }}">
     <p>{{ current_user.email }}</p>
   </div>
 </div>

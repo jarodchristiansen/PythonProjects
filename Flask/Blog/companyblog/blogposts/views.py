@@ -4,7 +4,7 @@ from flask_login import current_user, login_required
 import os
 from companyblog import db
 from companyblog.models import BlogPost, Images
-from companyblog.role_required import admin_required, not_ROLE
+from companyblog.role_required import admin_required
 from companyblog.blogposts.forms import BlogPostForm, PostForm
 
 
@@ -117,7 +117,7 @@ def imageuploader():
                 thumbnail = fn + '-thumb.jpg'
                 tmb_fullpath = os.path.join(current_app.config['UPLOADED_PATH_THUMB'], thumbnail)
                 # PNG is index while JPG needs RGB
-                if not im.mode == 'RGB':
+                if im.mode != 'RGB':
                     im = im.convert('RGB')
                 # save thumbnail
                 im.save(tmb_fullpath, "JPEG")

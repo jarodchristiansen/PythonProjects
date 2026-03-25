@@ -6,14 +6,11 @@ from flask import current_app, session, request, redirect
 
 
 def admin_required(func):
-    '''
-    This decorator works identically to login_required, accept that it
-    additionally requires that a user have their role attribute
-    set to 'ROLE'. If the current user is not authenticated, the user is sent
-    to the :attr:`LoginManager.unauthorized` callback. If the current user is
-    authenticated, but does not have `role == 'ROLE'`, the user is sent to the
-    :attr:`LoginManager.not_ROLE` callback.
-    '''
+    """
+    Like login_required, but the user must have role 'admin'.
+    Unauthenticated users get LoginManager.unauthorized();
+    authenticated users without the role get redirect_for_insufficient_role.
+    """
     @wraps(func)
     def decorated_view(*args, **kwargs):
         if request.method in EXEMPT_METHODS:
@@ -22,24 +19,16 @@ def admin_required(func):
             return func(*args, **kwargs)
         elif not current_user.is_authenticated:
             return current_app.login_manager.unauthorized()
-        # The ROLE privilege is checked below.
-        # Here, ROLE privilege is given to users whose attribute `role == 'ROLE'`,
-        # but this can be customized to require any desired specification.
         elif current_user.role != 'admin':
-            return current_app.login_manager.not_ROLE()
+            return current_app.login_manager.redirect_for_insufficient_role()
         return func(*args, **kwargs)
     return decorated_view
 
 
 def base_required(func):
-    '''
-    This decorator works identically to login_required, accept that it
-    additionally requires that a user have their role attribute
-    set to 'ROLE'. If the current user is not authenticated, the user is sent
-    to the :attr:`LoginManager.unauthorized` callback. If the current user is
-    authenticated, but does not have `role == 'ROLE'`, the user is sent to the
-    :attr:`LoginManager.not_ROLE` callback.
-    '''
+    """
+    Like login_required, but the user must have role 'base'.
+    """
     @wraps(func)
     def decorated_view(*args, **kwargs):
         if request.method in EXEMPT_METHODS:
@@ -48,31 +37,24 @@ def base_required(func):
             return func(*args, **kwargs)
         elif not current_user.is_authenticated:
             return current_app.login_manager.unauthorized()
-        # The ROLE privilege is checked below.
-        # Here, ROLE privilege is given to users whose attribute `role == 'ROLE'`,
-        # but this can be customized to require any desired specification.
         elif current_user.role != 'base':
-            return current_app.login_manager.not_ROLE()
+            return current_app.login_manager.redirect_for_insufficient_role()
         return func(*args, **kwargs)
     return decorated_view
 
 
-
-
-
-
-
-
-def not_ROLE(self):
-    # This method of LoginManager requires that you provide a `not_ROLE_view` attribute to LoginManager.
-    # `not_ROLE_view` can be provided where you provide a `login_view` for unauthorized users.
-    not_ROLE_view = self.not_ROLE_view
+def redirect_for_insufficient_role(self):
+    """
+    LoginManager hook: set login_manager.insufficient_role_view (same idea as login_view)
+    to the endpoint users without the required role should be sent to.
+    """
+    role_redirect_view = self.insufficient_role_view
     config = current_app.config
     if config.get('USE_SESSION_FOR_NEXT', USE_SESSION_FOR_NEXT):
-        not_ROLE_url = expand_login_view(not_ROLE_view)
+        role_redirect_expanded_url = expand_login_view(role_redirect_view)
         session['_id'] = self._session_identifier_generator()
-        session['next'] = make_next_param(not_ROLE_url, request.url)
-        redirect_url = make_login_url(not_ROLE_view)
+        session['next'] = make_next_param(role_redirect_expanded_url, request.url)
+        redirect_url = make_login_url(role_redirect_view)
     else:
-        redirect_url = make_login_url(not_ROLE_view, next_url=request.url)
+        redirect_url = make_login_url(role_redirect_view, next_url=request.url)
     return redirect(redirect_url)
