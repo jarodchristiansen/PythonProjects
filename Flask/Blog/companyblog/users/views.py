@@ -2,7 +2,7 @@ from flask import render_template ,url_for,flash,redirect,request,Blueprint
 import requests
 from flask_login import login_user, current_user, logout_user, login_required
 from companyblog import db
-from companyblog.role_required import admin_required, not_ROLE, base_required
+from companyblog.role_required import admin_required, base_required
 from companyblog.models import User, BlogPost, Post, TextOutput
 from companyblog.users.forms import RegistrationForm, LoginForm, UpdateUserForm, TextGenForm
 from companyblog.users.picture_handler import add_profile_pic
@@ -48,17 +48,17 @@ def login():
 
         user = User.query.filter_by(email=form.email.data).first()
 
-        if user.check_password(form.password.data) and user is not None:
+        if user is not None and user.check_password(form.password.data):
 
             login_user(user)
             flash('Log in Success!')
 
-            next = request.args.get('next')
+            next_url = request.args.get('next')
 
-            if next ==None or not next[0]=='/':
-                next = url_for('core.index')
+            if next_url is None or not next_url.startswith('/'):
+                next_url = url_for('core.index')
 
-            return redirect(next)
+            return redirect(next_url)
 
     return render_template('login.html',form=form)
 
@@ -102,9 +102,18 @@ def account():
 
 @users.route('/<username>')
 def user_posts(username):
-	page = request.args.get('page',1,type=int)
-	user = User.query.filter_by(username=username).first_or_404()
-	return render_template('user_public_view.html',user=user)
+    page = request.args.get('page', 1, type=int)
+    user = User.query.filter_by(username=username).first_or_404()
+    blog_posts = (
+        BlogPost.query.filter_by(author=user)
+        .order_by(BlogPost.date.desc())
+        .paginate(page=page, per_page=5)
+    )
+    return render_template(
+        'user_public_view.html',
+        user=user,
+        blog_posts=blog_posts,
+    )
 
 
 

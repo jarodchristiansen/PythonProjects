@@ -1,8 +1,10 @@
 {% extends "base.html" %}
+{% block title %}{{ post.meta_title }}{% endblock %}
+{% block extra_head %}
+  <meta name="description" content="{{ post.meta_desc }}">
+  <meta name="keywords" content="{{ post.keywords }}">
+{% endblock %}
 {% block content %}
-<title>{{post.meta_title}}</title>
-  <meta name="description" content="{{post.meta_desc}}">
-  <meta name="keywords" content="{{post.keywords}}">
 <div class="jumbotron">
   <h1>{{ post.title }}</h1>
   <h2>Written by: {{post.author.username}}</h2>
@@ -23,11 +25,11 @@
   <!-- Modal for Pop Up-->
   {# https://getbootstrap.com/docs/4.1/components/modal/ #}
   {# Notice how the link with the id to the button above! #}
-  <div class="modal del-modal" tabindex="-1" role="dialog" id="del_modal">
-    <div class="modal-dialog" role="document">
+  <div class="modal del-modal" tabindex="-1" role="dialog" aria-modal="true" aria-labelledby="del_modal_title" id="del_modal">
+    <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title">Delete Post Pop up Modal</h5>
+          <h5 class="modal-title" id="del_modal_title">Delete Post Pop up Modal</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>

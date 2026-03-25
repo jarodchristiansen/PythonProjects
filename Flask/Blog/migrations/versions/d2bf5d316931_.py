@@ -8,6 +8,7 @@ Create Date: 2020-07-20 04:07:57.781054
 from alembic import op
 import sqlalchemy as sa
 
+_USERS_ID_REF = ['users.id']
 
 # revision identifiers, used by Alembic.
 revision = 'd2bf5d316931'
@@ -40,14 +41,14 @@ def downgrade():
     sa.Column('date', sa.DATETIME(), nullable=False),
     sa.Column('title', sa.VARCHAR(length=140), nullable=False),
     sa.Column('text', sa.TEXT(), nullable=False),
-    sa.ForeignKeyConstraint(['user_id'], ['users.id'], ),
+    sa.ForeignKeyConstraint(['user_id'], _USERS_ID_REF, ),
     sa.PrimaryKeyConstraint('id')
     )
     op.create_table('admin',
     sa.Column('id', sa.INTEGER(), nullable=False),
     sa.Column('name', sa.VARCHAR(length=80), nullable=True),
     sa.Column('user_id', sa.INTEGER(), nullable=True),
-    sa.ForeignKeyConstraint(['user_id'], ['users.id'], ),
+    sa.ForeignKeyConstraint(['user_id'], _USERS_ID_REF, ),
     sa.PrimaryKeyConstraint('id'),
     sa.UniqueConstraint('name')
     )
@@ -55,7 +56,7 @@ def downgrade():
     sa.Column('id', sa.INTEGER(), nullable=False),
     sa.Column('name', sa.VARCHAR(length=80), nullable=True),
     sa.Column('user_id', sa.INTEGER(), nullable=True),
-    sa.ForeignKeyConstraint(['user_id'], ['users.id'], ),
+    sa.ForeignKeyConstraint(['user_id'], _USERS_ID_REF, ),
     sa.PrimaryKeyConstraint('id'),
     sa.UniqueConstraint('name')
     )
@@ -65,14 +66,14 @@ def downgrade():
     sa.Column('date', sa.DATETIME(), nullable=False),
     sa.Column('heading', sa.VARCHAR(length=140), nullable=False),
     sa.Column('post', sa.TEXT(), nullable=False),
-    sa.ForeignKeyConstraint(['user_id'], ['users.id'], ),
+    sa.ForeignKeyConstraint(['user_id'], _USERS_ID_REF, ),
     sa.PrimaryKeyConstraint('id')
     )
     op.create_table('base',
     sa.Column('id', sa.INTEGER(), nullable=False),
     sa.Column('name', sa.VARCHAR(length=80), nullable=True),
     sa.Column('user_id', sa.INTEGER(), nullable=True),
-    sa.ForeignKeyConstraint(['user_id'], ['users.id'], ),
+    sa.ForeignKeyConstraint(['user_id'], _USERS_ID_REF, ),
     sa.PrimaryKeyConstraint('id'),
     sa.UniqueConstraint('name')
     )
@@ -103,7 +104,7 @@ def downgrade():
     sa.Column('id', sa.INTEGER(), nullable=False),
     sa.Column('name', sa.VARCHAR(length=80), nullable=True),
     sa.Column('user_id', sa.INTEGER(), nullable=True),
-    sa.ForeignKeyConstraint(['user_id'], ['users.id'], ),
+    sa.ForeignKeyConstraint(['user_id'], _USERS_ID_REF, ),
     sa.PrimaryKeyConstraint('id'),
     sa.UniqueConstraint('name')
     )
